@@ -1,5 +1,6 @@
 transformers==4.51.2
 accelerate
+bitsandbytes>=0.43.0
 torchvision
 decord
 ffmpeg-python
