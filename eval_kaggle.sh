@@ -106,7 +106,7 @@ download_dataset() {
     return 0
   fi
   log "Installing huggingface_hub (pip, no-cache)..."
-  pip install --no-cache-dir huggingface_hub
+  pip install -q --no-cache-dir huggingface_hub
   log "Downloading ${HF_DATASET} -> ${DATASET_ROOT} ..."
   if [ -n "$HF_TOKEN" ]; then
     HF_TOKEN="$HF_TOKEN" python3 -c "
@@ -132,9 +132,9 @@ install_family_reqs() {
   fi
   log "Switching env -> $reqfile (pip uninstall + force-reinstall)..."
   # Uninstall version-sensitive pkgs (keep torch/torchvision to protect CUDA stack)
-  pip uninstall -y transformers accelerate bitsandbytes qwen-vl-utils decord \
+  pip uninstall -q -y transformers accelerate bitsandbytes qwen-vl-utils decord \
     opencv-python imageio ffmpeg-python einops scipy Pillow tqdm 2>/dev/null || true
-  pip install --no-cache-dir --force-reinstall -r "${SCRIPT_DIR}/requirements/${reqfile}"
+  pip install -q --no-cache-dir --force-reinstall -r "${SCRIPT_DIR}/requirements/${reqfile}"
   pip cache purge 2>/dev/null || true
   rm -rf /tmp/pip-* /tmp/tmp* 2>/dev/null || true
   CURRENT_REQS="$reqfile"
