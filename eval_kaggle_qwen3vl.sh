@@ -26,11 +26,11 @@ LIMIT_ARG="${LIMIT:-}"
 HF_HUB_CACHE="${HF_HOME:-$HOME/.cache/huggingface}/hub"
 
 MODELS=(
+  "shahedm2001/qwen3-vl-2b-cataract-sft-stage2"
+  "shahedm2001/qwen3-vl-2b-cataract-grpo"
   "Qwen/Qwen3-VL-2B-Instruct"
   "Qwen/Qwen3-VL-4B-Instruct"
   "Qwen/Qwen3-VL-8B-Instruct"
-  "shahedm2001/qwen3-vl-2b-cataract-sft-stage2"
-  "shahedm2001/qwen3-vl-2b-cataract-grpo"
 )
 
 N_OK=0; N_SKIP=0; N_FAIL=0
