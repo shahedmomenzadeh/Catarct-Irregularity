@@ -1,0 +1,8 @@
+transformers>=4.50.0
+accelerate
+bitsandbytes>=0.43.0
+qwen-vl-utils[decord]
+tqdm
+imageio
+opencv-python
+Pillow

@@ -1,0 +1,34 @@
+# --- Secrets ---
+.env
+*.env
+!.env.example
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+*.egg
+
+# --- Virtual environments (per-model uv stacks) ---
+.venv*/
+venv/
+env/
+
+# --- Datasets / videos (hosted on Hugging Face) ---
+data/
+data_downsampled/
+Irregularity_dataset/
+*.mp4
+
+# --- Logs / temp ---
+*.log
+*.tmp
+.cache/
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/

@@ -1,0 +1,9 @@
+transformers==4.51.2
+accelerate
+torchvision
+decord
+ffmpeg-python
+einops
+tqdm
+Pillow
+scipy

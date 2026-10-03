@@ -1,0 +1,69 @@
+{
+  "model_id": "ag/gemini-3.8-flash",
+  "tag": "api_gemini_3.8_flash",
+  "total_cases_evaluated": 41,
+  "overall_accuracy": 0.5122,
+  "balanced_accuracy": 0.4785,
+  "json_format_adherence_rate": 1.0,
+  "confusion_matrix": {
+    "A": {
+      "A": 4,
+      "B": 3,
+      "C": 3,
+      "INVALID": 0
+    },
+    "B": {
+      "A": 3,
+      "B": 4,
+      "C": 2,
+      "INVALID": 0
+    },
+    "C": {
+      "A": 6,
+      "B": 3,
+      "C": 13,
+      "INVALID": 0
+    }
+  },
+  "per_class_metrics": {
+    "Normal": {
+      "option": "A",
+      "n_samples": 10,
+      "tp": 4,
+      "fn": 6,
+      "fp": 9,
+      "tn": 22,
+      "accuracy": 0.6341,
+      "sensitivity_recall": 0.4,
+      "specificity": 0.7097,
+      "precision_ppv": 0.3077,
+      "f1_score": 0.3478
+    },
+    "Lens Irregularity": {
+      "option": "B",
+      "n_samples": 9,
+      "tp": 4,
+      "fn": 5,
+      "fp": 6,
+      "tn": 26,
+      "accuracy": 0.7317,
+      "sensitivity_recall": 0.4444,
+      "specificity": 0.8125,
+      "precision_ppv": 0.4,
+      "f1_score": 0.4211
+    },
+    "Pupil Contraction": {
+      "option": "C",
+      "n_samples": 22,
+      "tp": 13,
+      "fn": 9,
+      "fp": 5,
+      "tn": 14,
+      "accuracy": 0.6585,
+      "sensitivity_recall": 0.5909,
+      "specificity": 0.7368,
+      "precision_ppv": 0.7222,
+      "f1_score": 0.65
+    }
+  }
+}

@@ -1,0 +1,7 @@
+transformers
+accelerate
+bitsandbytes
+decord
+opencv-python
+tqdm
+Pillow
