@@ -6,3 +6,5 @@ tqdm
 imageio
 opencv-python
 Pillow
+scipy
+scikit-learn

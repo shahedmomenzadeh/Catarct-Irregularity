@@ -131,10 +131,13 @@ install_family_reqs() {
     return 0
   fi
   log "Switching env -> $reqfile (pip uninstall + force-reinstall)..."
-  # Uninstall version-sensitive pkgs (keep torch/torchvision to protect CUDA stack)
+  # Uninstall version-sensitive pkgs (keep torch/torchvision/scipy/scikit-learn/numpy:
+  # Kaggle base + transformers generation chain needs scipy via sklearn)
   pip uninstall -q -y transformers accelerate bitsandbytes qwen-vl-utils decord \
-    opencv-python imageio ffmpeg-python einops scipy Pillow tqdm 2>/dev/null || true
+    opencv-python imageio ffmpeg-python einops Pillow tqdm 2>/dev/null || true
   pip install -q --no-cache-dir --force-reinstall -r "${SCRIPT_DIR}/requirements/${reqfile}"
+  # Ensure scipy stack present (transformers -> sklearn.metrics -> scipy.sparse)
+  pip install -q --no-cache-dir scipy scikit-learn 2>/dev/null || true
   pip cache purge 2>/dev/null || true
   rm -rf /tmp/pip-* /tmp/tmp* 2>/dev/null || true
   CURRENT_REQS="$reqfile"
