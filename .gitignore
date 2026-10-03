@@ -19,6 +19,7 @@ env/
 data/
 data_downsampled/
 Irregularity_dataset/
+metadata/
 *.mp4
 
 # --- Logs / temp ---
